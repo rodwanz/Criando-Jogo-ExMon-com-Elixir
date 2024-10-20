@@ -1,4 +1,5 @@
 defmodule ExMon do
+  alias ExMon.Game.Status
   alias ExMon.{Game, Player}
 
   @computer_name "Sem Limite"
@@ -11,5 +12,7 @@ defmodule ExMon do
     @computer_name
     |> create_player(:punch, :kick, :heal)
     |> Game.start(player)
+
+    Status.print_round_message()
   end
 end
